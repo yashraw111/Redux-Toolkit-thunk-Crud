@@ -14,7 +14,6 @@ const CreateThunk = () => {
   const redirect = useNavigate();
   const dispatch = useDispatch();
   function regist(data) {
-    // console.log(data);
     dispatch(addUser(data));
     redirect("/View");
   }

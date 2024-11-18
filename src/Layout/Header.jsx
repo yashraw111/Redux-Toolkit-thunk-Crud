@@ -14,7 +14,7 @@ const Header = () => {
         <li className="nav-item">
           <NavLink className="nav-link active text-decoration-none" aria-current="page" href="#" to="/">CreateUser</NavLink>
         </li>
-          <NavLink className="nav-link active text-decoration-none" aria-current="page" href="#" to="/ReduxView">view</NavLink>
+          <NavLink className="nav-link active text-decoration-none" aria-current="page" href="#" to="/View">view</NavLink>
       </ul>
     </div>
   </div>
