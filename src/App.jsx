@@ -5,6 +5,8 @@ import Header from "./Layout/Header";
 import CreateThunk from "./Redux-thunk/Crud/CreateThunk";
 import View from "./Redux-thunk/Crud/View";
 import Update from "./Redux-thunk/Crud/Update";
+import Signupform from "./Redux-thunk/forms/Signupform";
+import LoginForm from "./Redux-thunk/forms/LoginForm";
 
 function App() {
   return (
@@ -15,6 +17,10 @@ function App() {
           <Route path="/" element={<CreateThunk />} />
           <Route path="/View" element={<View />} />
           <Route path="/Update/:id" element={<Update />} />
+          <Route path="/signup" element={<Signupform />} />
+          <Route path="/login" element={<LoginForm />} />
+
+
         </Routes>
       </Router>
     </>

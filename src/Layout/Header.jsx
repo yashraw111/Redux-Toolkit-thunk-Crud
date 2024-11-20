@@ -11,10 +11,15 @@ const Header = () => {
     </button>
     <div className="collapse navbar-collapse  me-auto" id="navbarNavDropdown">
       <ul className="navbar-nav ms-auto">
+          <li>
+          <NavLink className="nav-link active text-decoration-none" aria-current="page" href="#" to="/signup">SignUp</NavLink>
+          </li>
         <li className="nav-item">
-          <NavLink className="nav-link active text-decoration-none" aria-current="page" href="#" to="/">CreateUser</NavLink>
+          <NavLink className="nav-link active text-decoration-none" aria-current="page" href="#" to="/">Create Blog</NavLink>
         </li>
-          <NavLink className="nav-link active text-decoration-none" aria-current="page" href="#" to="/View">view</NavLink>
+        <li>
+          <NavLink className="nav-link active text-decoration-none" aria-current="page" href="#" to="/View">View Blogs</NavLink>
+          </li>
       </ul>
     </div>
   </div>

@@ -26,7 +26,7 @@ const View = () => {
         <div className="table-responsive">
           <table className="table-bordered table-striped rounded col-12 table-hover">
             <thead className="bg-dark text-white">
-              <tr>
+              <tr >
                 <th>SNO</th>
                 <th>UserName</th>
                 <th>Date</th>
@@ -46,13 +46,13 @@ const View = () => {
                       className="btn btn-danger btn-sm"
                       onClick={() => trash(user.id)}
                     >
-                      Delete
+                      <i class="fa-solid fa-trash"></i>
                     </button>
                     <NavLink
-                      className="btn btn-secondary btn-sm"
+                      className="btn btn-primary btn-sm"
                       to={`/Update/${user.id}`}
                     >
-                      Update
+                      <i class="fa-solid fa-pen-to-square"></i>
                     </NavLink>
                   </td>
                 </tr>
