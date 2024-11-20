@@ -15,7 +15,7 @@ const View = () => {
     if(confirm("Do you Want to delete this item ?")){
 
       dispatch(deleteUser(id));
-      console.log(`Deleted User ID: ${id}`);
+      // console.log(`Deleted User ID: ${id}`);
     }
   }
 

@@ -13,12 +13,10 @@ const Update = () => {
     reset,
   } = useForm();
   const {userList}=useSelector((state)=>state.users)
-  console.log(userList);
-  
-
+  // console.log(userList);
   // const SingleUSer = us
   const { id } = useParams();
-  console.log(`Updating User with ID: ${id}`);
+  // console.log(`Updating User with ID: ${id}`);
 
   const SingleUser = userList.find((user)=>{
     return user.id === id

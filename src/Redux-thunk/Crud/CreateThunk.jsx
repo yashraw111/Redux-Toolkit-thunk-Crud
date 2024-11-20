@@ -66,7 +66,6 @@ const CreateThunk = () => {
                 {...register("des")}
               ></textarea>
             </div>
-
             <button type="submit" class="btn btn-primary">
               Submit Blog
             </button>
