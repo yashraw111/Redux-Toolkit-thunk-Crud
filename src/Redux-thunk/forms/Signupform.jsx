@@ -2,7 +2,7 @@ import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } f
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { auth } from '../FireStore';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -11,11 +11,13 @@ const Signupform = () => {
 
   const Signup = (data) => {
     const { email, password } = data;
+    const redirect = useNavigate()
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((res) => {
         console.log(res.user);
         toast.success("User registered successfully!", { position: 'top-center' });
+        // redirect("/signup")
         reset();
       })
       .catch((err) => {
@@ -24,20 +26,20 @@ const Signupform = () => {
       });
   };
 
-  const googleAuth = () => {
-    const provider = new GoogleAuthProvider();
-
-    signInWithPopup(auth, provider)
-      .then((res) => {
-        const user = res.user;
-        console.log(user);
-        toast.success("Google Sign-In successful!", { position: 'top-center' });
-      })
-      .catch((err) => {
-        console.error(err.message);
-        toast.error("Google Sign-In failed: " + err.message, { position: 'top-center' });
-      });
-  };
+  // const googleAuth = () => {
+  //   const provider = new GoogleAuthProvider();
+  //   signInWithPopup(auth, provider)
+  //     .then((res) => {
+  //       const user = res.user;
+  //       console.log(user);
+  //       toast.success("Google Sign-In successful!", { position: 'top-center' });
+  //        window.location.href = '/CreateThunk'
+  //     })
+  //     .catch((err) => {
+  //       console.error(err.message);
+  //       toast.error("Google Sign-In failed: " + err.message, { position: 'top-center' });
+  //     });
+  // };
 
   return (
     <>
@@ -73,16 +75,16 @@ const Signupform = () => {
 
           <div className="d-flex justify-content-around align-items-center mt-3">
             <button type="submit" className="btn btn-success">Submit</button>
-            <NavLink className="btn btn-primary" to="/login">Login</NavLink>
+            <NavLink className="btn btn-primary" to="/">Login</NavLink>
           </div>
 
-          <button
+          {/* <button
             type="button"
             className="btn btn-dark mt-3"
             onClick={googleAuth}
           >
             Sign up With Google <i className="fa-brands fa-google"></i>
-          </button>
+          </button> */}
         </form>
       </div>
 

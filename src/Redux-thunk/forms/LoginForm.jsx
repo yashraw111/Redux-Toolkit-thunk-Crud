@@ -2,24 +2,26 @@ import { signInWithEmailAndPassword } from 'firebase/auth'
 import React from 'react'
 import { auth } from '../FireStore'
 import { useForm } from 'react-hook-form'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
+
 
 const LoginForm = () => {
   const{register,handleSubmit,reset}=useForm()
+
+  const redirect = useNavigate()
 
   function SignIn(data){
     signInWithEmailAndPassword(auth,data.email,data.password)
     .then((res)=>{
       console.log(res.user);
       toast.success("Login successfully",{position:'top-center'})
+      window.location.href = '/CreateThunk'
       reset()
     })
     .catch((err)=>{
       console.log(err);
       toast.error("Error: " + err.message, { position: 'top-center' });
-
-      
     })
   }
 

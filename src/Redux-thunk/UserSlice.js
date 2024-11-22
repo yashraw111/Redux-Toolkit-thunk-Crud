@@ -16,7 +16,6 @@ import {
 const initialState = {
   userList: [],
 };
-
 // Add User
 export const addUser = createAsyncThunk("user/addUser", async (data) => {
   const res = await addDoc(collection(dbFire, "Users"), data);

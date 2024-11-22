@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { addUser } from "../UserSlice";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../FireStore";
 
 const CreateThunk = () => {
   const {
@@ -17,6 +18,22 @@ const CreateThunk = () => {
     dispatch(addUser(data));
     redirect("/View");
   }
+
+  function handleLogOut(){
+   try {
+   if(confirm("Confirm LogOut")){
+    auth.signOut()
+    window.location.href = '/'
+    console.log("LogOut Successfully");
+   }
+    
+   } catch (error) {
+    console.error("Error Logging out",error.message)
+    
+   }
+    
+  }
+
 
   return (
     <>
@@ -72,6 +89,11 @@ const CreateThunk = () => {
           </form>
         </div>
       </div>
+
+
+    <div className="">
+      <button className="btn btn-outline-dark"  onClick={handleLogOut}><i class="fa-solid fa-right-from-bracket"></i></button>
+    </div>
     </>
   );
 };

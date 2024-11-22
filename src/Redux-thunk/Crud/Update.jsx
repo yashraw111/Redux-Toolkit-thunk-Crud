@@ -4,8 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { editUser, ViewUser } from "../UserSlice";
 
-
-
 const Update = () => {
 
   const {
@@ -19,27 +17,20 @@ const Update = () => {
   // const SingleUSer = us
   const { id } = useParams();
   // console.log(`Updating User with ID: ${id}`);
-
   const SingleUser = userList.find((user)=>{
     return user.id === id
   })
-
   const dispatch = useDispatch()
 
   useEffect(()=>{
     dispatch(ViewUser())
     reset(SingleUser)
-
   },[])
-
   const redirect = useNavigate()
   function Update(data){
     dispatch(editUser(data))
     redirect('/view')
-
   }
-
-
   return (
     <>
   <div class="container mt-5">
