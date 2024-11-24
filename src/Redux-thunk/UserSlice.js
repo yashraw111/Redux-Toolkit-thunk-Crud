@@ -53,7 +53,6 @@ export const editUser = createAsyncThunk("user/editUser", async (data) => {
 
   return data;
 });
-
 // User Slice
 const userSlice = createSlice({
   name: "users",
@@ -73,7 +72,7 @@ const userSlice = createSlice({
         state.userList = state.userList
         .filter((user) => user.id !== id)
       })
-        .addCase(editUser.fulfilled, (state, action) => {
+       .addCase(editUser.fulfilled, (state, action) => {
           const { id } = action.payload;
           
           const index_number = state.userList.findIndex((blog) => {

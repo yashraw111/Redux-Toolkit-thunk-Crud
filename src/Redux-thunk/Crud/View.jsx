@@ -54,6 +54,12 @@ const View = () => {
                     >
                       <i class="fa-solid fa-pen-to-square"></i>
                     </NavLink>
+                    <NavLink
+                      className="btn btn-primary btn-sm"
+                      to={`/SingleView/${user.id}`}
+                    >
+                      <i class="fa-solid fa-eye"></i>
+                    </NavLink>
                   </td>
                 </tr>
               ))}

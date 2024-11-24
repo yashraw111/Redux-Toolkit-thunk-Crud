@@ -13,6 +13,7 @@ import Update from "./Redux-thunk/Crud/Update";
 import Signupform from "./Redux-thunk/forms/Signupform";
 import LoginForm from "./Redux-thunk/forms/LoginForm";
 import { auth } from "./Redux-thunk/FireStore";
+import SingleUser from "./Redux-thunk/Crud/SingleUser";
 
 function App() {
   const [user, SetUser] = useState();
@@ -34,6 +35,7 @@ function App() {
           <Route path="/View" element={<View />} />
           <Route path="/Update/:id" element={<Update />} />
           <Route path="/signup" element={<Signupform />} />
+          <Route path="/SingleView/:id" element={<SingleUser />} />
         </Routes>
       </Router>
     </>
